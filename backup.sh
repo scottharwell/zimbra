@@ -39,7 +39,7 @@ ORPHANED=`ps -u zimbra -o "pid="` && kill -9 $ORPHANED
 rsync -avHKS --exclude 'data/ldap/mdb/db' --delete /opt/zimbra/ /media/backup/zimbra_backup
 
 # Sync LDAP Sparse Files (cp copies sparse files properly)
-cp -r /opt/zimbra/data/ldap/mdb/db /media/backup/zimbra_backup/data/ldap/mdb/db
+cp -r /opt/zimbra/data/ldap/mdb/db /media/backup/zimbra_backup/data/ldap/mdb/
 
 # Restart Zimbra Services
 su - zimbra -c "/opt/zimbra/bin/zmcontrol start"
